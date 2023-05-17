@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout='row'>
+        <span class="titel"> الطالب</span>
+    </mat-toolbar-row>
+
+</mat-toolbar>
+ <form [formGroup]="userForm">
+<div mat-dialog-content class="mat-typography">
+   
+        <div fxFlex fxLayout="column">
+            <div fxLayout="row wrap">
+                <mat-form-field appearance="fill" fxFlex>
+                    <mat-label>اسم الطالب</mat-label>
+                    <input matInput formControlName="name" required>
+
+                </mat-form-field>
+            </div>
+            <div fxLayout="row wrap">
+                <mat-form-field appearance="fill" fxFlex>
+                    <mat-label>الايميل</mat-label>
+                    <input matInput formControlName="email" required type="email">
+
+                </mat-form-field>
+               
+                
+            </div>
+            <div fxLayout="row wrap" >
+                <mat-form-field appearance="fill" fxFlex *ngIf="flag">
+                    <mat-label>الرقم السري</mat-label>
+                    <input matInput formControlName="password" required type="password">
+
+                </mat-form-field>
+                
+                
+            </div>
+          
+
+        </div>
+
+   
+
+</div> </form>
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" type="submit"
+    (click)="handleSubmit()"
+    >{{action}}</button>
+    <button mat-raised-button color="primary" mat-dialog-close>اغلاق</button>
+</mat-dialog-actions>
+
+

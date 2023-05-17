@@ -1,0 +1,45 @@
+<mat-toolbar color="primary" >
+    <mat-toolbar-row fxLayout="row">
+        <span class="title" >انشاء حساب</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="signup">
+        <div fxFlex  fxLayout="column">
+            <mat-form-field appearance="fill" fxFlex>
+
+                <mat-label>الاسم</mat-label>
+               
+                <input matInput formControlName="name" required>
+                 <mat-error *ngIf="signup.controls.name.touched && signup.controls.name.invalid"></mat-error> 
+            </mat-form-field>
+            <mat-form-field appearance="fill" fxFlex>
+
+                <mat-label>الايميل</mat-label>
+               
+                <input matInput formControlName="email" required>
+                 <mat-error *ngIf="signup.controls.email.touched && signup.controls.email.invalid"></mat-error> 
+            </mat-form-field>
+<mat-form-field appearance="fill" fxFlex>
+
+    <mat-label>رقم التلفون</mat-label>
+   
+    <input matInput formControlName="phone" required>
+     <mat-error *ngIf="signup.controls.phone.touched && signup.controls.phone.invalid"></mat-error> 
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>الرقم السري</mat-label>
+    <input matInput formControlName="password" required type="password">
+    <mat-error *ngIf="signup.controls.password.touched && signup.controls.password.invalid"></mat-error>
+</mat-form-field>
+        </div>
+
+    </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" type="submit" (click)="handelSubmit()" [disabled]="!(signup.valid && signup.dirty )"> انشاء حساب </button>
+    <button mat-raised-button color="primary" mat-dialog-close>اغلاق</button>
+</mat-dialog-actions>
+

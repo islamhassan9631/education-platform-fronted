@@ -1,0 +1,18 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2>islam hassan</h2>
+            <h4> islam@gmail.com</h4>
+        </div>
+        <img src="../../../../assets/img/261734338_5203701162977498_1022730541982373216_n.jpg" alt="phto" >
+    </div>
+    <mat-divider></mat-divider>
+    <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems.getMenuItems()" routerLinkActive="list-item-active"
+    >
+     <a mat-list-item appAccordionToggle [routerLink]="['',menuitem.state]" color="primry">
+     <mat-icon class="icon">{{menuitem.icon}}</mat-icon>
+     <span>{{menuitem.name}}</span>
+     <span fxFlex></span>
+     </a>
+ </mat-list-item>
+</mat-nav-list>
